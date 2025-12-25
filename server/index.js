@@ -35,7 +35,7 @@ app.post("/api/join", (req, res) => {
 })
 
 
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 app.listen(PORT, () => {
-  console.log(`Server running on http://127.0.0.1:${PORT}`)
+  console.log(`Server running on port ${PORT}`)
 })

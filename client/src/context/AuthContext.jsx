@@ -11,12 +11,15 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(null);
     const [loading, setLoading] = useState(true);
 
+    // Use environment variable for API URL or fallback to localhost
+    const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+
     useEffect(() => {
         const storedToken = localStorage.getItem('token');
         if (storedToken) {
             setToken(storedToken);
             // Fetch latest user data from backend
-            fetch('http://localhost:8000/api/user/me', {
+            fetch(`${API_URL}/api/user/me`, {
                 headers: { 'Authorization': `Bearer ${storedToken}` }
             })
                 .then(res => {
@@ -39,7 +42,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (credential) => {
         try {
-            const res = await fetch('http://localhost:8000/api/auth/google', {
+            const res = await fetch(`${API_URL}/api/auth/google`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -68,7 +71,7 @@ export const AuthProvider = ({ children }) => {
         if (!token) return { success: false, message: "Not logged in" };
 
         try {
-            const res = await fetch('http://localhost:8000/api/user/enroll', {
+            const res = await fetch(`${API_URL}/api/user/enroll`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
