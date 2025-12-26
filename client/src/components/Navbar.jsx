@@ -38,6 +38,29 @@ const Navbar = () => {
         }
     };
 
+    const renderAuthButtons = () => (
+        !user ? (
+            <>
+                <a href="#" className="btn btn-text">Log In</a>
+                <div className="google-login-wrapper">
+                    <GoogleLogin
+                        onSuccess={handleGoogleSuccess}
+                        onError={() => console.log('Login Failed')}
+                        theme="filled_black"
+                        shape="pill"
+                        text="signup_with"
+                    />
+                </div>
+            </>
+        ) : (
+            <div className="user-profile">
+                <img src={user.picture} alt={user.name} className="user-avatar" />
+                <span className="user-name">{user.name.split(' ')[0]}</span>
+                <button onClick={logout} className="btn btn-text logout-btn">Log Out</button>
+            </div>
+        )
+    );
+
     return (
         <nav className="navbar">
             <div className="nav-content">
@@ -45,34 +68,25 @@ const Navbar = () => {
                     <div className="logo-icon"><i className="fa-solid fa-lightbulb"></i></div>
                     <span>Lumina</span>
                 </Link>
-                <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`} style={mobileMenuOpen ? { display: 'flex', flexDirection: 'column', position: 'absolute', top: '80px', left: '0', width: '100%', background: 'rgba(15, 17, 21, 0.9)', padding: '2rem' } : {}}>
+                <div className={`nav-links ${mobileMenuOpen ? 'active' : ''}`} style={mobileMenuOpen ? { display: 'flex', flexDirection: 'column', position: 'absolute', top: '80px', left: '0', width: '100%', background: 'rgba(15, 17, 21, 0.9)', padding: '2rem', gap: '1.5rem', zIndex: 100 } : {}}>
                     <a href="#features" className="nav-link" onClick={(e) => handleNavClick(e, 'features')}>Features</a>
                     <a href="#courses" className="nav-link" onClick={(e) => handleNavClick(e, 'courses')}>Courses</a>
                     <a href="#mentors" className="nav-link" onClick={(e) => handleNavClick(e, 'mentors')}>Mentorship</a>
                     <a href="#testimonials" className="nav-link" onClick={(e) => handleNavClick(e, 'testimonials')}>Stories</a>
-                </div>
-                <div className="nav-actions">
-                    {!user ? (
-                        <>
-                            <a href="#" className="btn btn-text">Log In</a>
-                            <div className="google-login-wrapper">
-                                <GoogleLogin
-                                    onSuccess={handleGoogleSuccess}
-                                    onError={() => console.log('Login Failed')}
-                                    theme="filled_black"
-                                    shape="pill"
-                                    text="signup_with"
-                                />
-                            </div>
-                        </>
-                    ) : (
-                        <div className="user-profile">
-                            <img src={user.picture} alt={user.name} className="user-avatar" />
-                            <span className="user-name">{user.name.split(' ')[0]}</span>
-                            <button onClick={logout} className="btn btn-text logout-btn">Log Out</button>
+
+                    {/* Mobile Auth Buttons */}
+                    {mobileMenuOpen && (
+                        <div className="mobile-auth" style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '1rem' }}>
+                            {renderAuthButtons()}
                         </div>
                     )}
                 </div>
+
+                {/* Desktop Auth Buttons */}
+                <div className="nav-actions">
+                    {renderAuthButtons()}
+                </div>
+
                 {/* Mobile Menu Button */}
                 <button className="mobile-menu-btn" aria-label="Toggle menu" onClick={toggleMobileMenu}>
                     <i className="fa-solid fa-bars"></i>
