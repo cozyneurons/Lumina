@@ -6,7 +6,7 @@ const ScrollReveal = ({ children, width = "fit-content", delay = 0 }) => {
             initial={{ opacity: 0, y: 75 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, delay: delay, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: delay, ease: "easeOut" }}
             style={{ width }}
         >
             {children}
@@ -37,8 +37,8 @@ export const RevealItem = ({ children }) => {
     return (
         <motion.div
             variants={{
-                hidden: { opacity: 0, y: 50 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                hidden: { opacity: 0, y: 40 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } }
             }}
         >
             {children}
