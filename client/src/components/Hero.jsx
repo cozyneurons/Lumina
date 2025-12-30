@@ -1,4 +1,5 @@
 import ScrollReveal from './ScrollReveal';
+import CountUp from 'react-countup';
 
 const Hero = () => {
     return (
@@ -30,17 +31,23 @@ const Hero = () => {
                 <ScrollReveal delay={0.5}>
                     <div className="hero-stats">
                         <div className="stat-item">
-                            <span className="stat-number">50k+</span>
+                            <span className="stat-number">
+                                <CountUp end={50} suffix="k+" duration={2.5} />
+                            </span>
                             <span className="stat-label">Active Learners</span>
                         </div>
                         <div className="stat-separator"></div>
                         <div className="stat-item">
-                            <span className="stat-number">120+</span>
+                            <span className="stat-number">
+                                <CountUp end={120} suffix="+" duration={2.5} />
+                            </span>
                             <span className="stat-label">Expert Mentors</span>
                         </div>
                         <div className="stat-separator"></div>
                         <div className="stat-item">
-                            <span className="stat-number">4.9/5</span>
+                            <span className="stat-number">
+                                <CountUp end={4.9} decimals={1} suffix="/5" duration={2.5} />
+                            </span>
                             <span className="stat-label">User Rating</span>
                         </div>
                     </div>
