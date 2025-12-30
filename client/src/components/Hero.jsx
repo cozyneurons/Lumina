@@ -1,5 +1,6 @@
 import ScrollReveal from './ScrollReveal';
 import CountUp from 'react-countup';
+import Typewriter from 'typewriter-effect';
 
 const Hero = () => {
     return (
@@ -12,7 +13,19 @@ const Hero = () => {
                     </div>
                 </ScrollReveal>
                 <ScrollReveal delay={0.2}>
-                    <h1 className="hero-title">Master the Skills of <br /><span className="gradient-text">Tomorrow, Today.</span></h1>
+                    <h1 className="hero-title">Master the Skills of <br />
+                        <span className="gradient-text" style={{ display: 'inline-block' }}>
+                            <Typewriter
+                                options={{
+                                    strings: ['Tomorrow, Today.', 'The Future.', 'Innovation.'],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 75,
+                                    deleteSpeed: 50,
+                                }}
+                            />
+                        </span>
+                    </h1>
                 </ScrollReveal>
                 <ScrollReveal delay={0.3}>
                     <p className="hero-subtitle">Experience a new era of education. Interactive courses, world-class mentors,
