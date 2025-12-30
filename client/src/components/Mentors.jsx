@@ -16,7 +16,7 @@ const Mentors = () => {
                     <RevealItem>
                         <div className="mentor-card">
                             <div className="mentor-image">
-                                <img src="https://placehold.co/400x400/2a2e38/FFF?text=Sarah" alt="Sarah Johnson" />
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson" />
                                 <div className="mentor-overlay">
                                     <div className="social-links">
                                         <a href="#"><i className="fa-brands fa-linkedin"></i></a>
@@ -36,7 +36,7 @@ const Mentors = () => {
                     <RevealItem>
                         <div className="mentor-card">
                             <div className="mentor-image">
-                                <img src="https://placehold.co/400x400/2a2e38/FFF?text=David" alt="David Chen" />
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="David Chen" />
                                 <div className="mentor-overlay">
                                     <div className="social-links">
                                         <a href="#"><i className="fa-brands fa-linkedin"></i></a>
@@ -56,7 +56,7 @@ const Mentors = () => {
                     <RevealItem>
                         <div className="mentor-card">
                             <div className="mentor-image">
-                                <img src="https://placehold.co/400x400/2a2e38/FFF?text=Maria" alt="Maria Garcia" />
+                                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Maria Garcia" />
                                 <div className="mentor-overlay">
                                     <div className="social-links">
                                         <a href="#"><i className="fa-brands fa-linkedin"></i></a>
@@ -76,7 +76,7 @@ const Mentors = () => {
                     <RevealItem>
                         <div className="mentor-card">
                             <div className="mentor-image">
-                                <img src="https://placehold.co/400x400/2a2e38/FFF?text=James" alt="James Wilson" />
+                                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="James Wilson" />
                                 <div className="mentor-overlay">
                                     <div className="social-links">
                                         <a href="#"><i className="fa-brands fa-linkedin"></i></a>
