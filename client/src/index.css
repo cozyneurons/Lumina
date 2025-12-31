@@ -1087,6 +1087,39 @@ img {
 }
 
 /* CTA Section Styles (Existing) */
+
+.mentor-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.mentor-stats .stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mentor-stats .stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  /* Gold/Amber gradient for "max" stats feel */
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.mentor-stats .stat-label {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  margin-top: 0.25rem;
+}
+
 .cta-content p {
   font-size: 1.1rem;
   color: var(--text-muted);

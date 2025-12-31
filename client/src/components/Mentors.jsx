@@ -1,4 +1,5 @@
 import ScrollReveal, { RevealList, RevealItem } from './ScrollReveal';
+import shubhamImg from '../assets/shubham_mentor.jpg';
 
 const Mentors = () => {
     return (
@@ -15,18 +16,33 @@ const Mentors = () => {
                     {/* Mentor 1 */}
                     <div className="mentor-card">
                         <div className="mentor-image">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Sarah Johnson" />
+                            <img src={shubhamImg} alt="Shubham Kumar" />
                             <div className="mentor-overlay">
                                 <div className="social-links">
                                     <a href="#"><i className="fa-brands fa-linkedin"></i></a>
                                     <a href="#"><i className="fa-brands fa-twitter"></i></a>
+                                    <a href="#"><i className="fa-brands fa-github"></i></a>
                                 </div>
                             </div>
                         </div>
                         <div className="mentor-info">
-                            <h3>Sarah Johnson</h3>
-                            <p className="mentor-role">Senior Engineer @ Google</p>
+                            <h3>Shubham Kumar</h3>
+                            <p className="mentor-role">Distinguished Engineer @ Google</p>
                             <p className="mentor-bio">Specializing in distributed systems and scalable architecture.</p>
+                            <div className="mentor-stats">
+                                <div className="stat-item">
+                                    <span className="stat-value">5.0</span>
+                                    <span className="stat-label">Rating</span>
+                                </div>
+                                <div className="stat-item">
+                                    <span className="stat-value">100k+</span>
+                                    <span className="stat-label">Students</span>
+                                </div>
+                                <div className="stat-item">
+                                    <span className="stat-value">50+</span>
+                                    <span className="stat-label">Courses</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
